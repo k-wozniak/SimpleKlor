@@ -2,14 +2,14 @@
 
 Original projects:
 
-- https://github.com/GEIGEIGEIST/KLOR
-- https://github.com/sadekbaroudi/KLOR
+- <https://github.com/GEIGEIGEIST/KLOR>
+- <https://github.com/sadekbaroudi/KLOR>
 
 Some Notes:
 
 - Don't bother with LED. I lost a board this way and soldering them is a massive pain in the ass.
 - Don't just solder the microcontroller to the board, use headers, some coolones I found:
-    - TODO: Add some links.
+  - TODO: Add some links.
 
 [Cool ideas for using rotary encoders](https://docs.splitkb.com/hc/en-us/articles/360010513760-How-can-I-use-a-rotary-encoder)
 
@@ -50,9 +50,8 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 Enter the bootloader in 3 ways:
 
-* **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard
-* **Physical reset button**: Briefly press the button on the back of the PCB - some may have pads you must short instead
-* **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
-
+- **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard
+- **Physical reset button**: Briefly press the button on the back of the PCB - some may have pads you must short instead
+- **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
 
 ## LAYOUTS

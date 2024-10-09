@@ -31,14 +31,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ │╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯│ ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
    │   HOME  │         │    ←    │    ↓    │    →    │    (    ├─╯                ╰─┤    )    │    =    │    -    │    +    │    \    │    '    │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │   END   │         │ CTL + X │ CTL + C │ CTL + V │    [    ││  MUTE  ││PLY/PSE ││    ]    │         │         │         │    |    │         │
+   │   END   │ CTL + F │ CTL + X │ CTL + C │ CTL + V │    [    ││  MUTE  ││PLY/PSE ││    ]    │         │         │         │    |    │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    ▼    │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │  GO L3  │ R-SHIFT │
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
     [1] = LAYOUT_polydactyl(
               XXXXXXX,  KC_PGDN,  KC_UP,    KC_PGUP,  KC_LCBR,                       KC_RCBR,  XXXXXXX,  C(KC_MINS), C(KC_EQL),  XXXXXXX,
     KC_HOME,  XXXXXXX,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_LPRN,                       KC_RPRN,  KC_EQL,   KC_MINS,  S(KC_EQL), KC_BSLS,   KC_DQT,
-    KC_END,   XXXXXXX,  C(KC_X),  C(KC_C),  C(KC_V),  KC_LBRC,  KC_MUTE,   KC_MPLY,  KC_RBRC,  XXXXXXX,  XXXXXXX,  XXXXXXX,  S(KC_BSLS), XXXXXXX,
+    KC_END,   C(KC_F),  C(KC_X),  C(KC_C),  C(KC_V),  KC_LBRC,  KC_MUTE,   KC_MPLY,  KC_RBRC,  XXXXXXX,  XXXXXXX,  XXXXXXX,  S(KC_BSLS), XXXXXXX,
                                   _______,  _______,  _______,  _______,   _______,  _______,  GO_L3,    KC_RSFT
     ),
  
