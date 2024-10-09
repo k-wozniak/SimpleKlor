@@ -30,15 +30,15 @@ This allows to make changes and not worry about stuff.
 
 ![simpleklor](imgur.com image replace me!)
 
-*A short description of the keyboard/project*
+A short description of the keyboard/project:
 
-* Keyboard Maintainer: [Kamil Wozniak](https://github.com/k-wozniak)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+- Keyboard Maintainer: [Kamil Wozniak](https://github.com/k-wozniak)
+- Hardware Supported: *The PCBs, controllers supported*
+- Hardware Availability: *Links to where you can find this hardware*
 
 Make example for this keyboard (after setting up your build environment):
 
-    make simpleklor:default
+    qmk compile -kb simpleklor -km default
 
 Flashing example for this keyboard:
 
