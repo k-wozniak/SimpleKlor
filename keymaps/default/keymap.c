@@ -75,9 +75,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-// Encoder settings.
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    // Left encoder
+// Default encoder settings.
+void encoder_default(uint8_t index, bool clockwise) {
+        // Left encoder
     if (index == 0) {
         // History Scrubbing
         if (clockwise) {
@@ -94,11 +94,45 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             tap_code(KC_WH_U); // Mouse Wheel Up
         }
     }
+}
+
+// Layer 2 encoder settings.
+void encoder_l2(uint8_t index, bool clockwise) {
+    // Left encoder
+    if (index == 0) {
+        // History Scrubbing
+        if (clockwise) {
+            tap_code16(KC_AUDIO_VOL_DOWN); // Volume Down
+        } else {
+            tap_code16(KC_AUDIO_VOL_UP); // Volume Up
+        }
+
+    // Right encoder
+    } else if (index == 1) {
+        if (clockwise) {
+            tap_code(KC_WH_D); // Mouse Wheel Down
+        } else {
+            tap_code(KC_WH_U); // Mouse Wheel Up
+        }
+    }
+}
+
+// Encoder settings.
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    
+    switch(biton32(layer_state)) {
+        case 2:
+            encoder_l2(index, clockwise);
+            break;
+        default:
+            encoder_default(index, clockwise);
+            break;
+    }
 
     return true;
 }
 
-// Stop encoers from updating volume (default behaviour).
+// Stop encoders from updating volume (default behaviour).
 bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) { return false; }
     return true;
