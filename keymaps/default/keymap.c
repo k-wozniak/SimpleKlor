@@ -96,31 +96,23 @@ void encoder_default(uint8_t index, bool clockwise) {
     }
 }
 
+// Layer 1 encoder settings.
+void encoder_l1(uint8_t index, bool clockwise) {
+    clockwise ? tap_code16(KC_AUDIO_VOL_DOWN) : tap_code16(KC_AUDIO_VOL_UP);
+}
+
 // Layer 2 encoder settings.
 void encoder_l2(uint8_t index, bool clockwise) {
-    // Left encoder
-    if (index == 0) {
-        // History Scrubbing
-        if (clockwise) {
-            tap_code16(KC_AUDIO_VOL_DOWN); // Volume Down
-        } else {
-            tap_code16(KC_AUDIO_VOL_UP); // Volume Up
-        }
-
-    // Right encoder
-    } else if (index == 1) {
-        if (clockwise) {
-            tap_code(KC_WH_D); // Mouse Wheel Down
-        } else {
-            tap_code(KC_WH_U); // Mouse Wheel Up
-        }
-    }
+    clockwise ? tap_code16(KC_AUDIO_VOL_DOWN) : tap_code16(KC_AUDIO_VOL_UP);
 }
 
 // Encoder settings.
 bool encoder_update_user(uint8_t index, bool clockwise) {
     
     switch(biton32(layer_state)) {
+        case 1:
+            encoder_l1(index, clockwise);
+            break;
         case 2:
             encoder_l2(index, clockwise);
             break;
